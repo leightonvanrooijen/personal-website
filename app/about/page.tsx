@@ -42,7 +42,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className='flex h-[calc(100vh-4rem)] snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
+    <div className='flex snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
       {/* accounts for the header */}
       <div
         id='section-one'

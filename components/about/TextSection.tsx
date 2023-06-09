@@ -32,11 +32,11 @@ export const TextSection = ({
         className='z-10 mt-auto transition-opacity delay-300  duration-1000'
         data-observe
       >
-        <div className='full  flex items-center text-center text-4xl font-extrabold  sm:text-5xl'>
+        <div className='full  mdtext-5xl flex items-center text-center text-4xl  font-extrabold'>
           <div className='mr-2 text-pink-500'>{icon}</div>
           <p className='text-gray-800'>{text}</p>
         </div>
-        <p className='mt-2 flex justify-center text-sm font-semibold text-gray-400 sm:text-xl'>
+        <p className='mdtext-xl mt-2 flex justify-center text-sm font-semibold text-gray-400'>
           {subText}
         </p>
       </div>
@@ -65,7 +65,7 @@ const draw = (duration: number, pathLength: number = 1): Variants => ({
 export const MagnifyingGlass = () => {
   return (
     <motion.svg
-      className='z-1 h-[350px] w-[350px] overflow-hidden text-gray-200 opacity-0 sm:h-[500px] sm:w-[500px]'
+      className='z-1 mdh-[500px] mdw-[500px] h-[350px] w-[350px] overflow-hidden text-gray-200 opacity-0'
       initial='hidden'
       whileInView='visible'
       viewBox='0 0 24 24'
@@ -87,7 +87,7 @@ export const MagnifyingGlass = () => {
 export const Teacher = () => {
   return (
     <motion.svg
-      className='z-1 h-[390px] w-[390px] overflow-hidden text-gray-200 opacity-0 sm:h-[550px] sm:w-[550px]'
+      className='z-1 mdh-[550px] mdw-[550px] h-[390px] w-[390px] overflow-hidden text-gray-200 opacity-0'
       initial='visible'
       whileInView='visible'
       xmlns='http://www.w3.org/2000/svg'
@@ -114,7 +114,7 @@ export const Teacher = () => {
 export const Challenge = () => {
   return (
     <motion.svg
-      className='z-1 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
+      className='z-1 mdh-[500px] mdw-[500px] h-[300px] w-[300px] overflow-hidden text-gray-200'
       initial='hidden'
       whileInView='visible'
       viewBox='0 0 24 24'
@@ -134,7 +134,7 @@ export const Challenge = () => {
 export const Sports = () => {
   return (
     <motion.svg
-      className='z-1 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
+      className='z-1 mdh-[500px] mdw-[500px] h-[300px] w-[300px] overflow-hidden text-gray-200'
       initial='hidden'
       whileInView='visible'
       width='800px'
