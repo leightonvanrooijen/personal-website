@@ -24,7 +24,9 @@ export const TextSection = ({
       id={sectionId}
       className='relative flex h-full shrink-0 snap-start flex-col items-center justify-center py-12'
     >
-      {animation}
+      <div className='absolute flex h-full w-full items-center justify-center pb-10'>
+        {animation}
+      </div>
       <div
         style={{ opacity: 0 }}
         className='z-10 mt-auto transition-opacity delay-300  duration-1000'
@@ -63,7 +65,7 @@ const draw = (duration: number, pathLength: number = 1): Variants => ({
 export const MagnifyingGlass = () => {
   return (
     <motion.svg
-      className='z-1 right-50 top-50 absolute h-[350px] w-[350px] overflow-hidden text-gray-200 opacity-0 sm:h-[500px] sm:w-[500px]'
+      className='z-1 h-[350px] w-[350px] overflow-hidden text-gray-200 opacity-0 sm:h-[500px] sm:w-[500px]'
       initial='hidden'
       whileInView='visible'
       viewBox='0 0 24 24'
@@ -85,8 +87,8 @@ export const MagnifyingGlass = () => {
 export const Teacher = () => {
   return (
     <motion.svg
-      className='z-1 right-50 sm:top-50 absolute top-44 h-[390px] w-[390px] overflow-hidden text-gray-200 opacity-0 sm:h-[500px] sm:w-[500px]'
-      initial='hidden'
+      className='z-1 h-[390px] w-[390px] overflow-hidden text-gray-200 opacity-0 sm:h-[550px] sm:w-[550px]'
+      initial='visible'
       whileInView='visible'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -112,7 +114,7 @@ export const Teacher = () => {
 export const Challenge = () => {
   return (
     <motion.svg
-      className='z-1 right-50 sm:top-50 absolute top-48 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
+      className='z-1 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
       initial='hidden'
       whileInView='visible'
       viewBox='0 0 24 24'
@@ -132,7 +134,7 @@ export const Challenge = () => {
 export const Sports = () => {
   return (
     <motion.svg
-      className='z-1 right-50 sm:top-50 absolute top-52 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
+      className='z-1 h-[300px] w-[300px] overflow-hidden text-gray-200 sm:h-[500px] sm:w-[500px]'
       initial='hidden'
       whileInView='visible'
       width='800px'
