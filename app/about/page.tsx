@@ -42,11 +42,10 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className='flex snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
-      {/* accounts for the header */}
+    <div className='flex h-[100dvh] snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
       <div
         id='section-one'
-        className='flex h-full shrink-0 snap-start justify-center px-16 py-12'
+        className='flex h-full shrink-0 snap-start justify-center px-16 py-8 md:py-16'
       >
         <Introduction />
       </div>

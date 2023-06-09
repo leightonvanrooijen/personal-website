@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ScrollDown } from '@/components/about/ScrollDown';
 import { motion, Variants } from 'framer-motion';
-import Image from 'next/image';
-import ArrowGif from '@/public/arrow.gif';
 
 export const TextSection = ({
   text,
@@ -22,7 +20,7 @@ export const TextSection = ({
   return (
     <div
       id={sectionId}
-      className='relative flex h-full shrink-0 snap-start flex-col items-center justify-center py-12'
+      className='relative flex h-full shrink-0 snap-start flex-col items-center justify-center py-8 md:py-16'
     >
       <div className='absolute flex h-full w-full items-center justify-center pb-10'>
         {animation}
@@ -88,7 +86,7 @@ export const Teacher = () => {
   return (
     <motion.svg
       className='z-1 mdh-[550px] mdw-[550px] h-[390px] w-[390px] overflow-hidden text-gray-200 opacity-0'
-      initial='visible'
+      initial='hidden'
       whileInView='visible'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -137,8 +135,6 @@ export const Sports = () => {
       className='z-1 mdh-[500px] mdw-[500px] h-[300px] w-[300px] overflow-hidden text-gray-200'
       initial='hidden'
       whileInView='visible'
-      width='800px'
-      height='800px'
       viewBox='0 0 512 512'
       xmlns='http://www.w3.org/2000/svg'
     >

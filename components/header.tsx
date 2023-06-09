@@ -24,7 +24,7 @@ const NavLink = ({ text, href }: { text: string; href: string }) => {
 
 export const Header = () => {
   return (
-    <nav className='flex h-16 w-full items-center justify-center shadow'>
+    <nav className='fixed z-50 flex h-16 w-full items-center justify-center bg-white shadow'>
       <NavLink text='About Me' href={'/about'} />
     </nav>
   );
