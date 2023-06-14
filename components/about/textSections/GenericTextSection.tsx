@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollDown } from '@/components/about/ScrollDown';
+import { SectionScroll } from '@/components/about/SectionScroll';
 import { motion, Variants } from 'framer-motion';
 
 export const GenericTextSection = ({
@@ -34,13 +34,33 @@ export const GenericTextSection = ({
           <div className='mr-2 text-pink-500'>{icon}</div>
           <p className='text-gray-800'>{text}</p>
         </div>
-        <p className='mdtext-xl mt-2 flex justify-center text-sm font-semibold text-gray-400'>
+        <p className='mt-2  flex justify-center text-sm font-semibold text-gray-400 md:text-xl'>
           {subText}
         </p>
       </div>
       {nextSectionId && (
         <div className='mt-auto'>
-          <ScrollDown text='Keep Going!' nextSectionId={nextSectionId} />
+          <SectionScroll text='Keep Going!' nextSectionId={nextSectionId} />
+        </div>
+      )}
+      {!nextSectionId && (
+        <div className={'right-50 absolute bottom-8 z-50 rotate-180'}>
+          <a href={`#section-one`}>
+            <svg
+              width='34'
+              height='28'
+              viewBox='0 0 34 28'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              className={`animate-bounce`}
+            >
+              <path
+                d='M15.8875 27.75L33.775 0H0L15.8875 27.75Z'
+                fill='black'
+                fill-opacity='0.1'
+              />
+            </svg>
+          </a>
         </div>
       )}
     </div>

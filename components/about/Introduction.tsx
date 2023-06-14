@@ -1,7 +1,7 @@
 'use client'; // TODO change animation tactic to allow for better SSR
 import Image from 'next/image';
 import image from '@/public/aboutme.png';
-import { ScrollDown } from '@/components/about/ScrollDown';
+import { SectionScroll } from '@/components/about/SectionScroll';
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -30,7 +30,7 @@ export const Introduction = () => {
         </p>
       </div>
       <div className='mt-auto'>
-        <ScrollDown text={'Who I Am'} nextSectionId={'section-two'} />
+        <SectionScroll text={'Who I Am'} nextSectionId={'section-two'} />
       </div>
     </div>
   );

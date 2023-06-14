@@ -1,5 +1,5 @@
 import { FaBrush } from 'react-icons/fa';
-import { ScrollDown } from '@/components/about/ScrollDown';
+import { SectionScroll } from '@/components/about/SectionScroll';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 import { draw } from '@/components/about/textSections/GenericTextSection';
@@ -47,7 +47,7 @@ export const CreatorTextSection = ({
           </p>
         </motion.div>
         <div className='mt-auto'>
-          <ScrollDown text='Keep Going!' nextSectionId={nextSectionId} />
+          <SectionScroll text='Keep Going!' nextSectionId={nextSectionId} />
         </div>
       </motion.div>
     </div>
