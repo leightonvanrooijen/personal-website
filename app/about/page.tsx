@@ -1,12 +1,11 @@
 'use client';
 import {
   FaBrain,
-  FaBrush,
   FaChalkboardTeacher,
   FaFutbol,
   FaHardHat,
 } from 'react-icons/fa';
-import React, { ReactNode, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Introduction } from '@/components/about/Introduction';
 import {
   Challenge,
@@ -15,6 +14,7 @@ import {
   Teacher,
   TextSection,
 } from '@/components/about/TextSection';
+import { CreatorTextSection } from '@/components/about/CreatorTextSection';
 
 export default function AboutMe() {
   useEffect(() => {
@@ -73,18 +73,15 @@ export default function AboutMe() {
         icon={<FaHardHat />}
         animation={<Challenge />}
       />
-      <TextSection
-        text={'I am a Creator'}
-        subText={'Look Around!'}
+      <CreatorTextSection
         sectionId={'section-five'}
         nextSectionId={'section-six'}
-        icon={<FaBrush />}
       />
+
       <TextSection
         text={'A Sports Player'}
         subText={'Better as a Team'}
         sectionId={'section-six'}
-        nextSectionId={'section-seven'}
         icon={<FaFutbol />}
         animation={<Sports />}
       />

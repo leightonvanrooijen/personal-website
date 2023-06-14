@@ -13,7 +13,7 @@ export const TextSection = ({
   text: string;
   subText: string;
   sectionId: string;
-  nextSectionId: string;
+  nextSectionId?: string;
   animation?: React.ReactNode;
   icon: React.ReactNode;
 }) => {
@@ -27,10 +27,10 @@ export const TextSection = ({
       </div>
       <div
         style={{ opacity: 0 }}
-        className='z-10 mt-auto transition-opacity delay-300  duration-1000'
+        className='z-10 flex flex-1 flex-col items-center justify-center transition-opacity delay-300 duration-1000'
         data-observe
       >
-        <div className='full  mdtext-5xl flex items-center text-center text-4xl  font-extrabold'>
+        <div className='full mdtext-5xl flex items-center text-center text-4xl font-extrabold'>
           <div className='mr-2 text-pink-500'>{icon}</div>
           <p className='text-gray-800'>{text}</p>
         </div>
@@ -38,14 +38,16 @@ export const TextSection = ({
           {subText}
         </p>
       </div>
-      <div className='mt-auto'>
-        <ScrollDown text='Keep Going!' nextSectionId={nextSectionId} />
-      </div>
+      {nextSectionId && (
+        <div className='mt-auto'>
+          <ScrollDown text='Keep Going!' nextSectionId={nextSectionId} />
+        </div>
+      )}
     </div>
   );
 };
 
-const draw = (duration: number, pathLength: number = 1): Variants => ({
+export const draw = (duration: number, pathLength: number = 1): Variants => ({
   hidden: { pathLength: 0, opacity: 0 },
   visible: {
     pathLength,

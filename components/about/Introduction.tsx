@@ -42,7 +42,7 @@ const draw = {
     pathLength: 1,
     opacity: 1,
     transition: {
-      pathLength: { duration: 1 },
+      pathLength: { duration: 1.51 },
     },
   },
 };
@@ -50,7 +50,6 @@ const draw = {
 const Arrow = () => {
   return (
     <motion.svg
-      className='z-1'
       initial='hidden'
       animate='visible'
       width='107'
@@ -59,21 +58,20 @@ const Arrow = () => {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g>
+      <motion.g>
         <motion.path
-          stroke-width='3'
+          strokeWidth='3'
           variants={draw}
           d='M36.8605 172C103.241 150.268 0.477446 108.011 76.3894 108.324C152.301 108.637 59.3975 32.5543 3 4'
           stroke='black'
-          fill={'none'}
         />
         <motion.path
           variants={draw}
           d='M6.5 15.5L2.5 4L15 2'
           stroke='black'
-          stroke-width='3'
+          strokeWidth='3'
         />
-      </g>
+      </motion.g>
     </motion.svg>
   );
 };
