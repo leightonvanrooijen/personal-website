@@ -42,7 +42,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className='flex h-full w-full snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
+    <div className='flex h-full w-full flex-col'>
       <div
         id='section-one'
         className='flex h-full shrink-0 snap-start justify-center px-16 py-8 md:py-16'
@@ -50,37 +50,36 @@ export default function AboutMe() {
         <Introduction />
       </div>
       <GenericTextSection
-        text={'I am Curious'}
-        subText={'Always Learning, Always Growing'}
+        text={'I am curious'}
+        subText={'Always learning, always growing'}
         sectionId={'section-two'}
         nextSectionId={'section-three'}
         icon={<FaBrain />}
         animation={<MagnifyingGlass />}
       />
       <GenericTextSection
-        text={'I am a Mentor'}
-        subText={'Bringing Others on the Journey'}
+        text={'I am a mentor'}
+        subText={'Bringing others on the journey'}
         sectionId={'section-three'}
         nextSectionId={'section-four'}
         icon={<FaChalkboardTeacher className='mt-1' />}
         animation={<Teacher />}
       />
-      <GenericTextSection
-        text={'Challenge Seeker'}
-        subText={'The Kind that Others Shy Away From'}
+      <CreatorTextSection
         sectionId={'section-four'}
         nextSectionId={'section-five'}
+      />
+      <GenericTextSection
+        text={'Challenge seeker'}
+        subText={'No problem too tough'}
+        sectionId={'section-five'}
+        nextSectionId={'section-six'}
         icon={<FaHardHat />}
         animation={<Challenge />}
       />
-      <CreatorTextSection
-        sectionId={'section-five'}
-        nextSectionId={'section-six'}
-      />
-
       <GenericTextSection
-        text={'A Sports Player'}
-        subText={'Better as a Team'}
+        text={'A sports player'}
+        subText={'Better as a team'}
         sectionId={'section-six'}
         icon={<FaFutbol />}
         animation={<Sports />}

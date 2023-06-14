@@ -11,9 +11,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en '>
-      <body className='flex h-[100dvh] w-full flex-col bg-gray-100'>
-        {/*<Header />*/}
+    <html lang='en' className='snap-y snap-mandatory scroll-smooth'>
+      <body className='flex h-screen w-full flex-col overflow-scroll bg-gray-100'>
         {children}
       </body>
     </html>
