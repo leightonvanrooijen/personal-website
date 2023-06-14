@@ -25,12 +25,12 @@ export const CreatorTextSection = ({
   nextSectionId: string;
 }) => {
   return (
-    <div className='flex h-full w-full shrink-0 snap-start items-center '>
+    <div className='flex h-full w-full shrink-0 snap-start items-center'>
       <motion.div
         initial='hidden'
         whileInView='visible'
         id={sectionId}
-        className='relative flex h-[95%] w-full shrink-0 snap-start flex-col items-center justify-center py-8 transition-all delay-300 duration-[2000ms] md:py-16'
+        className='relative mt-[5%] flex h-[95%] w-full shrink-0 snap-start flex-col items-center justify-center overflow-hidden py-8 transition-all delay-300 duration-[2000ms] md:py-16'
       >
         <motion.div className='flex h-full w-[500px] items-center justify-center pb-10'>
           <Ship />
