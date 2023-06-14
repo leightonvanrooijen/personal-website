@@ -12,9 +12,9 @@ import {
   MagnifyingGlass,
   Sports,
   Teacher,
-  TextSection,
-} from '@/components/about/TextSection';
-import { CreatorTextSection } from '@/components/about/CreatorTextSection';
+  GenericTextSection,
+} from '@/components/about/textSections/GenericTextSection';
+import { CreatorTextSection } from '@/components/about/textSections/CreatorTextSection';
 
 export default function AboutMe() {
   useEffect(() => {
@@ -42,14 +42,14 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className='flex h-[100dvh] snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
+    <div className='flex h-full w-full snap-y snap-mandatory flex-col overflow-scroll scroll-smooth'>
       <div
         id='section-one'
         className='flex h-full shrink-0 snap-start justify-center px-16 py-8 md:py-16'
       >
         <Introduction />
       </div>
-      <TextSection
+      <GenericTextSection
         text={'I am Curious'}
         subText={'Always Learning, Always Growing'}
         sectionId={'section-two'}
@@ -57,7 +57,7 @@ export default function AboutMe() {
         icon={<FaBrain />}
         animation={<MagnifyingGlass />}
       />
-      <TextSection
+      <GenericTextSection
         text={'I am a Mentor'}
         subText={'Bringing Others on the Journey'}
         sectionId={'section-three'}
@@ -65,7 +65,7 @@ export default function AboutMe() {
         icon={<FaChalkboardTeacher className='mt-1' />}
         animation={<Teacher />}
       />
-      <TextSection
+      <GenericTextSection
         text={'Challenge Seeker'}
         subText={'The Kind that Others Shy Away From'}
         sectionId={'section-four'}
@@ -78,7 +78,7 @@ export default function AboutMe() {
         nextSectionId={'section-six'}
       />
 
-      <TextSection
+      <GenericTextSection
         text={'A Sports Player'}
         subText={'Better as a Team'}
         sectionId={'section-six'}

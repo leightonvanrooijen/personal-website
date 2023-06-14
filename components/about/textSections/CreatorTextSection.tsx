@@ -2,7 +2,7 @@ import { FaBrush } from 'react-icons/fa';
 import { ScrollDown } from '@/components/about/ScrollDown';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
-import { draw } from '@/components/about/TextSection';
+import { draw } from '@/components/about/textSections/GenericTextSection';
 
 export const beamUp: Variants = {
   hidden: {

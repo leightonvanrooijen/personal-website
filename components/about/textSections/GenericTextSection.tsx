@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollDown } from '@/components/about/ScrollDown';
 import { motion, Variants } from 'framer-motion';
 
-export const TextSection = ({
+export const GenericTextSection = ({
   text,
   subText,
   sectionId,
