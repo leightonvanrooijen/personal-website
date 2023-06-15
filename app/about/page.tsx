@@ -3,7 +3,9 @@ import {
   FaBrain,
   FaChalkboardTeacher,
   FaFutbol,
+  FaGithub,
   FaHardHat,
+  FaLinkedin,
 } from 'react-icons/fa';
 import React, { useEffect } from 'react';
 import { Introduction } from '@/components/about/Introduction';
@@ -42,13 +44,8 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className='flex h-full w-full flex-col'>
-      <div
-        id='section-one'
-        className='flex h-full shrink-0 snap-start justify-center px-16 py-8 md:py-16'
-      >
-        <Introduction />
-      </div>
+    <div className='flex h-full w-full flex-col items-center'>
+      <Introduction />
       <GenericTextSection
         text={'I am curious'}
         subText={'Always learning, always growing'}
