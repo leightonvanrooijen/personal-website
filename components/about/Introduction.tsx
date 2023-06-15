@@ -4,12 +4,9 @@ import image from '@/public/aboutme.png';
 import { SectionScroll } from '@/components/about/SectionScroll';
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaGithub,
-  FaInstagram,
-  FaInstagramSquare,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+import { draw } from '@/components/about/drawAnimationVariant';
 
 export const Introduction = () => {
   return (
@@ -39,33 +36,7 @@ export const Introduction = () => {
             & Life Long Learner
           </p>
         </div>
-        <div
-          className={
-            'mt-auto flex w-full items-start justify-center space-x-4 text-3xl text-gray-700 md:pb-16'
-          }
-        >
-          <a
-            href={'https://www.instagram.com/leighton_van_rooijen/'}
-            target='_blank'
-            className='hover:text-gray-500'
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href={'https://www.linkedin.com/in/leightonvanrooijen'}
-            target='_blank'
-            className='hover:text-gray-500'
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href={'https://www.github.com/leightonvanrooijen'}
-            target='_blank'
-            className='hover:text-gray-500'
-          >
-            <FaGithub />
-          </a>
-        </div>
+        <SocialMediaLinks />
         <div className='mt-8'>
           <SectionScroll text={'Who I Am'} nextSectionId={'section-two'} />
         </div>
@@ -74,15 +45,36 @@ export const Introduction = () => {
   );
 };
 
-const draw = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      pathLength: { duration: 1.51 },
-    },
-  },
+const SocialMediaLinks = () => {
+  return (
+    <div
+      className={
+        'mt-auto flex w-full items-start justify-center space-x-4 text-3xl text-gray-700 md:pb-16'
+      }
+    >
+      <a
+        href={'https://www.instagram.com/leighton_van_rooijen/'}
+        target='_blank'
+        className='hover:text-gray-500'
+      >
+        <FaInstagram />
+      </a>
+      <a
+        href={'https://www.linkedin.com/in/leightonvanrooijen'}
+        target='_blank'
+        className='hover:text-gray-500'
+      >
+        <FaLinkedin />
+      </a>
+      <a
+        href={'https://www.github.com/leightonvanrooijen'}
+        target='_blank'
+        className='hover:text-gray-500'
+      >
+        <FaGithub />
+      </a>
+    </div>
+  );
 };
 
 const Arrow = () => {
@@ -99,12 +91,12 @@ const Arrow = () => {
       <motion.g>
         <motion.path
           strokeWidth='3'
-          variants={draw}
+          variants={draw(1.5, 1, 0)}
           d='M36.8605 172C103.241 150.268 0.477446 108.011 76.3894 108.324C152.301 108.637 59.3975 32.5543 3 4'
           stroke='black'
         />
         <motion.path
-          variants={draw}
+          variants={draw(1.5, 1, 0)}
           d='M6.5 15.5L2.5 4L15 2'
           stroke='black'
           strokeWidth='3'

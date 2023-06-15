@@ -2,11 +2,12 @@ import { FaBrush } from 'react-icons/fa';
 import { SectionScroll } from '@/components/about/SectionScroll';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
-import { draw } from '@/components/about/textSections/GenericTextSection';
+
+import { draw } from '@/components/about/drawAnimationVariant';
 
 export const beamUp: Variants = {
   hidden: {
-    bottom: '20%',
+    bottom: '25%',
   },
   visible: {
     bottom: '50%',
@@ -25,32 +26,30 @@ export const CreatorTextSection = ({
   nextSectionId: string;
 }) => {
   return (
-    <div className='flex h-full w-full shrink-0 snap-start items-center'>
-      <motion.div
-        initial='hidden'
-        whileInView='visible'
-        id={sectionId}
-        className='relative mt-[5%] flex h-[95%] w-full shrink-0 snap-start flex-col items-center justify-center overflow-hidden py-8 transition-all delay-300 duration-[2000ms] md:py-16'
-      >
-        <motion.div className='flex h-full w-[500px] items-center justify-center pb-10'>
-          <Ship />
-        </motion.div>
-        <motion.div variants={beamUp} className='absolute z-10' data-observe>
-          <div className='full mdtext-5xl flex items-center text-center text-4xl font-extrabold'>
-            <div className='mr-2 text-pink-500'>
-              <FaBrush />
-            </div>
-            <p className='text-gray-800'>I am a Creator</p>
-          </div>
-          <p className='mdtext-xl mt-2 flex justify-center text-sm font-semibold text-gray-400'>
-            Look Around!
-          </p>
-        </motion.div>
-        <div className='mt-auto'>
-          <SectionScroll text='Keep Going!' nextSectionId={nextSectionId} />
-        </div>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      id={sectionId}
+      className='relative mt-[5%] flex h-full w-full shrink-0 snap-start flex-col items-center justify-center overflow-hidden py-8 transition-all delay-300 duration-[2000ms] md:py-16'
+    >
+      <motion.div className='flex h-full w-[500px] items-center justify-center pb-10'>
+        <Ship />
       </motion.div>
-    </div>
+      <motion.div variants={beamUp} className='absolute z-10' data-observe>
+        <div className='full flex items-center text-center text-4xl font-extrabold'>
+          <div className='mr-2 text-pink-500'>
+            <FaBrush />
+          </div>
+          <p className='text-gray-800'>I am a Creator</p>
+        </div>
+        <p className='mdtext-xl mt-2 flex justify-center text-sm font-semibold text-gray-400'>
+          Look Around!
+        </p>
+      </motion.div>
+      <div className='mt-auto'>
+        <SectionScroll text='Keep Going!' nextSectionId={nextSectionId} />
+      </div>
+    </motion.div>
   );
 };
 

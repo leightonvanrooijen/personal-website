@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionScroll } from '@/components/about/SectionScroll';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { draw } from '@/components/about/drawAnimationVariant';
 
 export const GenericTextSection = ({
   text,
@@ -20,7 +21,7 @@ export const GenericTextSection = ({
   return (
     <div
       id={sectionId}
-      className='relative flex h-full shrink-0 snap-start flex-col items-center justify-center py-8 md:py-16'
+      className='relative flex h-full w-full shrink-0 snap-start flex-col items-center justify-center py-8 md:py-16'
     >
       <div className='absolute flex h-full w-full items-center justify-center pb-10'>
         {animation}
@@ -57,7 +58,7 @@ export const GenericTextSection = ({
               <path
                 d='M15.8875 27.75L33.775 0H0L15.8875 27.75Z'
                 fill='black'
-                fill-opacity='0.1'
+                fillOpacity='0.1'
               />
             </svg>
           </a>
@@ -67,21 +68,6 @@ export const GenericTextSection = ({
   );
 };
 
-export const draw = (duration: number, pathLength: number = 1): Variants => ({
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength,
-    opacity: 1,
-    transition: {
-      pathLength: {
-        duration,
-        repeat: 1,
-        repeatType: 'reverse',
-        ease: 'easeInOut',
-      },
-    },
-  },
-});
 export const MagnifyingGlass = () => {
   return (
     <motion.svg
