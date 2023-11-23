@@ -21,7 +21,7 @@ export const SectionScroll = ({
           <path
             d='M15.8875 27.75L33.775 0H0L15.8875 27.75Z'
             fill='black'
-            fill-opacity='0.1'
+            fillOpacity='0.1'
           />
         </svg>
       </a>

@@ -1,7 +1,6 @@
-'use client'; // TODO change animation tactic to allow for better SSR
+'use client'; // TODO change animation tactic to allow for SSR
 import Image from 'next/image';
 import image from '@/public/aboutme.png';
-import { SectionScroll } from '@/components/about/SectionScroll';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -37,9 +36,6 @@ export const Introduction = () => {
           </p>
         </div>
         <SocialMediaLinks />
-        <div className='mt-8'>
-          <SectionScroll text={'Who I Am'} nextSectionId={'section-two'} />
-        </div>
       </div>
     </div>
   );
@@ -49,7 +45,7 @@ const SocialMediaLinks = () => {
   return (
     <div
       className={
-        'mt-auto flex w-full items-start justify-center space-x-4 text-3xl text-gray-700 md:pb-16'
+        'mt-auto flex w-full items-center justify-center space-x-4 text-4xl text-gray-700 md:pb-16'
       }
     >
       <a
@@ -69,7 +65,7 @@ const SocialMediaLinks = () => {
       <a
         href={'https://www.github.com/leightonvanrooijen'}
         target='_blank'
-        className='hover:text-gray-500'
+        className='hover:animate-bounce hover:text-gray-500'
       >
         <FaGithub />
       </a>

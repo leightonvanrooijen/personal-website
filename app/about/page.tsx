@@ -3,9 +3,7 @@ import {
   FaBrain,
   FaChalkboardTeacher,
   FaFutbol,
-  FaGithub,
   FaHardHat,
-  FaLinkedin,
 } from 'react-icons/fa';
 import React, { useEffect } from 'react';
 import { Introduction } from '@/components/about/Introduction';
@@ -46,41 +44,6 @@ export default function AboutMe() {
   return (
     <div className='flex h-full w-full flex-col items-center'>
       <Introduction />
-      <GenericTextSection
-        text={'I am curious'}
-        subText={'Always learning, always growing'}
-        sectionId={'section-two'}
-        nextSectionId={'section-three'}
-        icon={<FaBrain />}
-        animation={<MagnifyingGlass />}
-      />
-      <GenericTextSection
-        text={'I am a mentor'}
-        subText={'Bringing others on the journey'}
-        sectionId={'section-three'}
-        nextSectionId={'section-four'}
-        icon={<FaChalkboardTeacher className='mt-1' />}
-        animation={<Teacher />}
-      />
-      <CreatorTextSection
-        sectionId={'section-four'}
-        nextSectionId={'section-five'}
-      />
-      <GenericTextSection
-        text={'Challenge seeker'}
-        subText={'No problem too tough'}
-        sectionId={'section-five'}
-        nextSectionId={'section-six'}
-        icon={<FaHardHat />}
-        animation={<Challenge />}
-      />
-      <GenericTextSection
-        text={'A sports player'}
-        subText={'Better as a team'}
-        sectionId={'section-six'}
-        icon={<FaFutbol />}
-        animation={<Sports />}
-      />
     </div>
   );
 }
