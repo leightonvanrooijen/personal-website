@@ -1,4 +1,4 @@
-'use client'; // TODO change animation tactic to allow for SSR
+'use client';
 import Image from 'next/image';
 import image from '@/public/aboutme.png';
 import React from 'react';
