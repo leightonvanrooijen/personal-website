@@ -2,7 +2,7 @@ import { FaArrowDown } from 'react-icons/fa';
 
 export const HireMe = () => {
   return (
-    <div className='flex min-h-screen flex-1 snap-start flex-col bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'>
+    <div className='flex h-[calc(100dvh)] flex-1 snap-start flex-col bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'>
       <h1 className='mb-[5%] text-7xl after:text-purple-600 after:content-["_Tracksuit!"] sm:text-9xl'>
         Hey,
       </h1>

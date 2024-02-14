@@ -2,7 +2,7 @@ import { FaArrowDown } from 'react-icons/fa';
 
 export const Product = () => {
   return (
-    <div className='flex min-h-screen flex-1 snap-start flex-col bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'>
+    <div className='flex min-h-[calc(100dvh)] flex-1 snap-start flex-col bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'>
       <h1 className='mb-[5%] text-3xl before:text-purple-600 before:content-["Outcomes_"] sm:text-6xl'>
         over solutions
       </h1>

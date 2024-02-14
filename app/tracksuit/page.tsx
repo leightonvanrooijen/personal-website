@@ -9,7 +9,7 @@ export default function TracksuitPleaseHireMe() {
     <div className={`flex-1 ${chapeau.className}`}>
       <div
         className={
-          'hidden h-screen flex-1 flex-col items-center justify-center sm:flex xl:hidden'
+          'hidden h-[calc(100dvh)] flex-1 flex-col items-center justify-center sm:flex xl:hidden'
         }
       >
         <p className='text-xl text-purple-500 md:text-4xl'>{`Uhh, hoped you wouldn't notice`}</p>

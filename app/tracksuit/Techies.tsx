@@ -13,9 +13,9 @@ export const Techies = () => {
   return (
     <div
       ref={ref}
-      className='flex min-h-screen flex-1 snap-start flex-col  bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'
+      className='flex h-[calc(100dvh)] flex-1 snap-start flex-col  bg-purple-100 px-4 py-5 sm:px-8 sm:py-10'
     >
-      <h2 className='pt-5 text-6xl'>{`Curious`}</h2>
+      <h2 className='text-6xl sm:pt-5'>{`Curious`}</h2>
       <div className='flex w-full flex-1 flex-col sm:flex-grow-0 sm:flex-row sm:items-center sm:pt-[10%]'>
         <p className='ml-2 pt-5 text-2xl sm:ml-0 sm:text-4xl'>{`I wonder how they did that?`}</p>
         <div className='flex flex-1 items-center justify-center'>
