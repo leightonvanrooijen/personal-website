@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useIntersects } from '@/app/tracksuit/FitsIn';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export const Techies = () => {
   const [start, setStart] = useState(false);
@@ -12,23 +13,42 @@ export const Techies = () => {
   return (
     <div
       ref={ref}
-      className='grid min-h-screen flex-1 grid-cols-[40%_1fr] bg-purple-100 px-8 py-10'
+      className='flex min-h-screen flex-1 flex-col  bg-purple-100 px-8 py-10'
     >
-      <CircleProgress />
+      <h2 className='pt-5 text-6xl'>{`Curious`}</h2>
+      <div className='flex w-full items-center pt-[10%]'>
+        <p className='pt-5 text-4xl'>{`I wounder how they did that?`}</p>
+        <div className='flex flex-1 items-center justify-center'>
+          <FaArrowRight
+            className=' mt-5 animate-bounce text-purple-300'
+            size={40}
+          />
+          <CircleProgress />
+          <FaArrowLeft
+            className='mt-5 animate-bounce text-purple-300'
+            size={40}
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
 const CircleProgress = () => {
   const [inView, setInView] = useState(false);
+  const [begin, setBegin] = useState(false);
 
   const percentage = 0.75;
+  const pageRef = useRef<null | HTMLDivElement>(null);
   const outerProgress = useRef<null | SVGCircleElement>(null);
   const innerProgress = useRef<null | SVGCircleElement>(null);
   const percentageRef = useRef<null | HTMLParagraphElement>(null);
 
+  useIntersects(pageRef, () => setInView(true));
+
   // lets not talk about this haha
   useEffect(() => {
+    if (!begin) return;
     if (
       !innerProgress.current ||
       !outerProgress.current ||
@@ -48,9 +68,10 @@ const CircleProgress = () => {
 
     outerCircle.style.strokeDasharray = `${outerCircleCircumference} ${outerCircleCircumference}`;
     innerCircle.style.strokeDasharray = `${percentageAround} ${circumference}`;
-  }, [innerProgress.current, inView]);
+  }, [begin]);
 
   useEffect(() => {
+    if (!begin) return;
     if (!percentageRef.current) return;
 
     const percentageElement = percentageRef.current;
@@ -69,10 +90,20 @@ const CircleProgress = () => {
     }, 20);
 
     return () => clearInterval(interval);
+  }, [begin]);
+
+  useEffect(() => {
+    if (!inView) return;
+    setTimeout(() => {
+      setBegin(true);
+    }, 1000);
   }, [inView]);
 
   return (
-    <div className='relative flex w-fit items-center justify-center'>
+    <div
+      className='relative flex w-fit items-center justify-center'
+      ref={pageRef}
+    >
       <div className='absolute flex h-full w-full items-center justify-center '>
         <p ref={percentageRef} className='text-5xl font-bold text-green-700'>
           0%
