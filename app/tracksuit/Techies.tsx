@@ -17,7 +17,7 @@ export const Techies = () => {
     >
       <h2 className='pt-5 text-6xl'>{`Curious`}</h2>
       <div className='flex w-full items-center pt-[10%]'>
-        <p className='pt-5 text-4xl'>{`I wounder how they did that?`}</p>
+        <p className='pt-5 text-4xl'>{`I wonder how they did that?`}</p>
         <div className='flex flex-1 items-center justify-center'>
           <FaArrowRight
             className=' mt-5 animate-bounce text-purple-300'
