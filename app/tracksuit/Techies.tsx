@@ -20,52 +20,90 @@ export const Techies = () => {
 };
 
 const CircleProgress = () => {
-  const c1 = useRef<SVGCircleElement | null>(null);
-  const c2 = useRef<SVGCircleElement | null>(null);
-  const [progress, setProgress] = useState(10);
+  const [inView, setInView] = useState(false);
+
+  const percentage = 0.75;
+  const outerProgress = useRef<null | SVGCircleElement>(null);
+  const innerProgress = useRef<null | SVGCircleElement>(null);
+  const percentageRef = useRef<null | HTMLParagraphElement>(null);
+
+  // lets not talk about this haha
+  useEffect(() => {
+    if (
+      !innerProgress.current ||
+      !outerProgress.current ||
+      !percentageRef.current
+    )
+      return;
+
+    const outerCircle = outerProgress.current;
+    const outerCircleRadius = outerCircle.r.baseVal.value;
+
+    const outerCircleCircumference = outerCircleRadius * 2 * Math.PI;
+
+    const innerCircle = innerProgress.current;
+    const radius = innerCircle.r.baseVal.value;
+    const circumference = radius * 2 * Math.PI;
+    const percentageAround = circumference * percentage;
+
+    outerCircle.style.strokeDasharray = `${outerCircleCircumference} ${outerCircleCircumference}`;
+    innerCircle.style.strokeDasharray = `${percentageAround} ${circumference}`;
+  }, [innerProgress.current, inView]);
 
   useEffect(() => {
-    if (!c1.current || !c2.current) return;
+    if (!percentageRef.current) return;
 
-    setInterval(() => {
-      if (!c1.current) return;
-      if (progress < 50) {
-        setProgress(progress + 1);
-        const c = Math.PI * 40 * 2;
-        const percent = ((100 - progress) / 100) * c;
+    const percentageElement = percentageRef.current;
+    const percentageValue = percentage * 100;
+    let currentPercentage = 0;
 
-        c1.current.style.strokeDasharray = `${percent} ${c}`;
+    const interval = setInterval(() => {
+      if (currentPercentage >= percentageValue) {
+        clearInterval(interval);
+      } else {
+        currentPercentage + 2 > percentageValue
+          ? (currentPercentage += 1)
+          : (currentPercentage += 2);
+        percentageElement.textContent = `${currentPercentage}%`;
       }
     }, 20);
-  }, [c1, c2, progress]);
+
+    return () => clearInterval(interval);
+  }, [inView]);
 
   return (
-    <div className='relative flex h-96 w-96 items-center justify-center'>
-      <p className='absolute z-10 text-5xl font-bold text-purple-500'>50%</p>
-      <svg viewBox={'0 0 100 100'} xmlns='http://www.w3.org/2000/svg'>
-        <circle
-          ref={c1}
-          cx={50}
-          cy={50}
-          r={40}
-          fill={'transparent'}
-          strokeWidth={12}
-          strokeDasharray={'210 999'}
-          strokeLinecap={'round'}
-          className={'stroke-violet-200'}
-        />
-        <circle
-          ref={c2}
-          cx={50}
-          cy={50}
-          r={34}
-          fill={'transparent'}
-          strokeWidth={12}
-          strokeDasharray={'210 999'}
-          strokeLinecap={'round'}
-          className={'stroke-purple-800'}
-        />
-      </svg>
+    <div className='relative flex w-fit items-center justify-center'>
+      <div className='absolute flex h-full w-full items-center justify-center '>
+        <p ref={percentageRef} className='text-5xl font-bold text-green-700'>
+          0%
+        </p>
+      </div>
+      <div style={{ transform: 'rotate(50deg)' }}>
+        <svg viewBox='0 0 100 100' width='300' height='300' data-percent='89'>
+          <circle
+            className='fill-none stroke-green-500 stroke-[12] transition-all duration-1000 ease-in-out'
+            cx='50'
+            cy='50'
+            r='40'
+            ref={outerProgress}
+            style={{
+              strokeDasharray: '40 999',
+              strokeLinecap: 'round',
+            }}
+          />
+          <circle
+            ref={innerProgress}
+            className='stroke-dash fill-none stroke-green-700 stroke-[12] transition-all duration-1000 ease-in-out'
+            cx='50'
+            cy='50'
+            r='32'
+            style={{
+              strokeDasharray: '20 999',
+              strokeLinecap: 'round',
+            }}
+          />
+        </svg>
+      </div>
     </div>
   );
 };
