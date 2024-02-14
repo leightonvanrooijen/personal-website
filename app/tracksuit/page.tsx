@@ -13,7 +13,8 @@ export default function TracksuitPleaseHireMe() {
         }
       >
         <p className='text-xl text-purple-500 md:text-4xl'>{`Uhh, hoped you wouldn't notice`}</p>
-        <p className='before:content-["Visit_me_on_a_computer_:)"] sm:before:content-["Make_me_fullscreen_:)"] md:text-2xl'></p>
+        <p className='mt-3 sm:before:content-["Make_me_fullscreen"] md:text-2xl'></p>
+        <p className='sm:before:content-["or_come_on_your_phone_:)"] '></p>
       </div>
       <div className={'block flex-1 sm:hidden xl:block'}>
         <HireMe />
