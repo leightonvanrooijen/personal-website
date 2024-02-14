@@ -36,7 +36,7 @@ export const FitsIn = () => {
   return (
     <div
       ref={ref}
-      className='grid min-h-screen flex-1 grid-cols-[40%_1fr] bg-purple-100 px-8 py-10'
+      className='grid min-h-screen flex-1 snap-start grid-cols-[40%_1fr] bg-purple-100 px-8 py-10'
     >
       <div className='mr-10 h-full pt-[30%]'>
         <h2 className='pb-5 text-6xl'>{`Fit's in!`}</h2>

@@ -13,7 +13,7 @@ export const Techies = () => {
   return (
     <div
       ref={ref}
-      className='flex min-h-screen flex-1 flex-col  bg-purple-100 px-8 py-10'
+      className='flex min-h-screen flex-1 snap-start flex-col  bg-purple-100 px-8 py-10'
     >
       <h2 className='pt-5 text-6xl'>{`Curious`}</h2>
       <div className='flex w-full items-center pt-[10%]'>
