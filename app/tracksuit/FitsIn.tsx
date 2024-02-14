@@ -36,40 +36,42 @@ export const FitsIn = () => {
   return (
     <div
       ref={ref}
-      className='grid min-h-screen flex-1 snap-start grid-cols-[40%_1fr] bg-purple-100 px-8 py-10'
+      className='grid h-screen flex-1 snap-start bg-purple-100 px-4 py-5 sm:grid-cols-[40%_1fr] md:px-8 md:py-10'
     >
-      <div className='mr-10 h-full pt-[30%]'>
+      <div className='mr-10 h-full sm:pt-[30%]'>
         <h2 className='pb-5 text-6xl'>{`Fit's in!`}</h2>
-        {start && (
-          <TypeAnimation
-            sequence={[
-              `Thank goodness! But you didn't seriously expect to get hired with just that did you?`,
-              () => setNext(true),
-            ]}
-            wrapper='p'
-            speed={60}
-            className='pb-3 text-2xl before:text-purple-500 before:content-["Stu:_"]'
-            cursor={false}
-          />
-        )}
-        {next && (
-          <TypeAnimation
-            sequence={[
-              500,
-              `Uhh... yeah no, good thing I've got a few more tricks up my sleeve `,
-            ]}
-            wrapper='p'
-            speed={60}
-            className='text-2xl before:text-purple-500 before:content-["Leighton:_"]'
-            cursor={false}
-          />
-        )}
+        <div className='mt-5 sm:mt-0'>
+          {start && (
+            <TypeAnimation
+              sequence={[
+                `Thank goodness! But you didn't seriously expect to get hired with just that did you?`,
+                () => setNext(true),
+              ]}
+              wrapper='p'
+              speed={60}
+              className='pb-3 text-xl before:text-purple-500 before:content-["Stu:_"] sm:text-2xl'
+              cursor={false}
+            />
+          )}
+          {next && (
+            <TypeAnimation
+              sequence={[
+                500,
+                `Uhh... yeah no, good thing I've got a few more tricks up my sleeve `,
+              ]}
+              wrapper='p'
+              speed={60}
+              className='mt-[5%] text-xl before:text-purple-500 before:content-["Leighton:_"] sm:mt-0 sm:text-2xl'
+              cursor={false}
+            />
+          )}
+        </div>
       </div>
-      <div className='flex h-full items-center'>
+      <div className='mt-auto flex h-fit items-center sm:mt-0 sm:h-full'>
         <div
+          className='h-[300px] sm:h-[700px] sm:p-0'
           style={{
             backgroundImage: 'url(partoftheteam.png)',
-            height: '700px',
             width: '100%',
             backgroundSize: 'cover',
             position: 'static',
