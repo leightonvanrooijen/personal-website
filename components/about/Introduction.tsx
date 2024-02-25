@@ -62,15 +62,17 @@ const SocialMediaLinks = () => {
       >
         <FaLinkedin />
       </a>
-      <a
-        href={'https://www.github.com/leightonvanrooijen'}
-        target='_blank'
-        className='hover:animate-bounce hover:text-gray-500'
-      >
-        <FaGithub />
-      </a>
+      <div className='group flex items-end '>
+        <a
+          href={'https://www.github.com/leightonvanrooijen'}
+          target='_blank'
+          className='group-hover:animate-bounce hover:text-gray-500'
+        >
+          <FaGithub />
+        </a>
+      </div>
     </div>
-  );
+  )
 };
 
 const Arrow = () => {
